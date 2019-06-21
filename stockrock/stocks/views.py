@@ -3,6 +3,7 @@ from .forms import StockSearchForm
 import json
 from .models import Stock
 import pandas as pd
+import os
 import requests
 
 def search_stock(request):
@@ -14,7 +15,7 @@ def search_stock(request):
             function = 'TIME_SERIES_DAILY_ADJUSTED'
             ticker = f'NSE:{s.ticker}'
             outputsize =  'compact'
-            apikey = 'IWLKTDPIS9TEFIFF'
+            apikey = os.environ.get("AlphaVantageAPIKey")
 
             url = f'https://www.alphavantage.co/query?function={function}&symbol={ticker}&outputsize={outputsize}&apikey={apikey}&datatype=csv'
             df = pd.read_csv(url)
