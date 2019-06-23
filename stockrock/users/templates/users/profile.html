@@ -1,0 +1,12 @@
+{% extends 'stocks/base.html' %} {% block content %}
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6 border">
+      <p class="lead">{{ user.username }}</p>
+      <p class="lead">{{ user.email }}</p>
+      <p class="lead">{{ user.first_name }} {{ user.last_name }}</p>
+    </div>
+  </div>
+</div>
+{% endblock content %}
