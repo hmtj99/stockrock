@@ -1,0 +1,17 @@
+<!-- prettier-ignore -->
+{% extends 'stocks/base.html' %} {% block content %} {% load crispy_forms_tags%}
+
+<!-- prettier-ignore -->
+<div class="container mt-3">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+          <legend class="display-4">Sign Up Today!</legend>
+          {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+          <button type="submit" class="btn btn-outline-primary">Sign Up</button>
+        </div>
+      </form>
+</div>
+{% endblock content %}

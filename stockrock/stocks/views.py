@@ -24,7 +24,7 @@ def search_stock(request):
             print(df.head())
             stock_data = df.to_json(orient='columns')
             stock_data_final = json.dumps(stock_data)
-            return render(request,'stocks/stockView.html',{"stock_name":stock_name,'stock_data':stock_data_final})
+            return render(request,'stocks/stockView.html',{"stock_name":stock_name,'stock_data':stock_data_final,"title":stock_name,"stock_ticker":ticker})
 
         except:
             print("There was some error") 

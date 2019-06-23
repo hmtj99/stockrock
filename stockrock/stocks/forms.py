@@ -8,3 +8,8 @@ class StockSearchForm(forms.ModelForm):
         labels = {
             'name':'',
         }
+        widgets = {
+            'name': forms.TextInput(
+                attrs={'id':'tags'}
+            )
+        }
